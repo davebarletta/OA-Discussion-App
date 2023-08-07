@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Your Extension Name",
+    "version": "1.0",
+    "description": "Description of your extension",
+    "icons": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon16.png",
+        "48": "icon48.png"
+      }
+    },
+    "permissions": ["identity", "activeTab"],
+    "oauth2": {
+      "client_id": "YOUR_GOOGLE_OAUTH2_CLIENT_ID",
+      "scopes": ["profile", "email"]
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*/*"],
+        "js": ["content_script.js"]
+      }
+    ],
+    "web_accessible_resources": ["popup.html"]
+  }
+  
